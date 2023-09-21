@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
-const PormptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
+const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   const { data: session } = useSession();
   const pathName = usePathname();
   const router = useRouter();
@@ -23,7 +23,7 @@ const PormptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   const handleCopy = () => {
     setCopied(post.prompt);
     navigator.clipboard.writeText(post.prompt);
-    setTimeout(() => setCopied(false), 10000);
+    setTimeout(() => setCopied(false), 3000);
   };
 
   return (
@@ -93,4 +93,4 @@ const PormptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   );
 };
 
-export default PormptCard;
+export default PromptCard;
